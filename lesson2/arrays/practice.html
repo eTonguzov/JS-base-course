@@ -1,0 +1,27 @@
+<script>
+    let item1 = {
+        fio:'IvanovIA',
+        salary:18000,
+        id:121
+    }
+    let item2 = {
+        fio:'BorisovAA',
+        salary:20000,
+        id:123
+    }
+    let item3 = {
+        fio:'SmirnovSA',
+        salary:30000,
+        id:125
+    }
+    
+    let office = [item1, item2, item3];
+    let s = 0;
+    office.forEach(function(man){
+        s += man.salary;
+        console.log(`Сотрудник ${man.fio} имеет оклад ${man.salary}`);
+    })
+    console.log(`Средний оклад: ${(s/office.length).toFixed(2)}`)
+    
+    
+    </script>

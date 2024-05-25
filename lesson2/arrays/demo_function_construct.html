@@ -1,0 +1,65 @@
+<script>
+    // let car1 = {
+    //     title: 'Audi',
+    //     price: 1000,
+    //     getInfo: function(){
+    //         return `Автомобиль ${this.title} стоит ${this.price}`;
+    //     }
+    // }
+
+    // let car2 = {
+    //     title: 'BMW',
+    //     price: 1200,
+        // getInfo: function(){
+        //     return `Автомобиль ${this.title} стоит ${this.price}`;
+        // }
+    // }
+
+    // Если необходимо создать набор объектов с одинаковыми свойствами по умолчанию,
+    // то используйте функцию конструктор
+
+    // Ниже находится функция конструктор, которая принимает в качестве аргументов
+    // значения о свойствах машины. Функция конструктор это шаблон для создания объекта.
+
+
+    function getItemWithMaxPrice(items){//items - это массив элементов(объектов)
+        let maxItem = { //Пусть этот объект является автомобилем с макс. ценой
+            title:'',
+            price:0
+        }
+
+        for(let car of items){
+            if(car.price > maxItem.price){
+                maxItem.title = car.title;
+                maxItem.price = car.price;
+            }
+        }
+
+        return maxItem;
+
+    }
+
+
+    function Car(title,price){
+        this.title = title;//this - это тот объект, для которого запускаем функцию конструктор
+        this.price = price;
+        this.getInfo = function(){
+            return `Автомобиль ${this.title} стоит ${this.price}`;
+        }
+    }
+
+    let car1 = new Car('Audi',1000);
+    let car2 = new Car('BMW',1200);
+    let car3 = new Car('VW',900);
+
+    let cars = [car1,car2,car3];
+    for(let car of cars){
+        console.log(car.getInfo());
+    }
+
+
+    let carMaxPrice = getItemWithMaxPrice(cars);
+    console.log(carMaxPrice);
+    alert(`Автомобиль ${carMaxPrice.title} стоит дороже остальных, его цена: ${carMaxPrice.price}`)
+
+</script>

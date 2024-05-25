@@ -1,0 +1,15 @@
+<script>
+    // let year = new Date().getFullYear();//получение текущего года
+    // alert(year === 2024);//сравнение на равенство без учета типа данных
+    // alert(year === 2024);//сравнение с учетом типа данных
+
+    // Операции сравнения
+    // >,<,>=,<=,==,===,!=
+
+    // Примеры с логическими операциями
+    let numberDay = +prompt('Введите номер дня недели');
+    let isWorkDay = numberDay > 0 && numberDay < 6;
+    let isWeekend = numberDay == 6 || numberDay == 7;
+    console.log(`День ${numberDay} будний день? Ответ: ${isWorkDay}`);
+    console.log(`День ${numberDay} выходной день? Ответ: ${isWeekend}`);
+</script>

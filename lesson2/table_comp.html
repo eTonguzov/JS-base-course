@@ -1,0 +1,27 @@
+<script>
+
+let count_error = 0;
+for(let i=0;i<5;i++){
+    let a = parseInt(Math.random() * 9 + 1);
+    let b = parseInt(Math.random() * 9 + 1);
+    let result = a * b;
+    let answer = +prompt(`${a} * ${b} = `);
+    if(answer != result){
+        count_error++;
+    }
+    if(count_error > 2){
+        break;
+    }
+}
+
+
+if(count_error == 0){
+    alert(`Все верно! Отлично`);
+}else if(count_error == 1){
+    alert(`Хорошо!`);
+}else if(count_error == 2){
+    alert(`Зачет`);
+}else{
+    alert('На пересдачу');
+}
+</script>

@@ -1,0 +1,76 @@
+<script>
+    // Пример №1
+
+    // let age = parseInt(Math.random() * (30 - 15) + 15; //[15,30)
+    // console.log('Возраст: ' + age);
+
+    // if(age < 18){
+    //     console.log('Вы учитесь в школе');
+    // }else if(age >= 18 && age < 23){
+    //     console.log('Вы студент');
+    // }else{
+    //     if(prompt('Вы работаете? (Y|N)') == 'Y'){
+    //         let infoJob = prompt("Кем Вы работаете?");
+    //         if(infoJob != ''){//если ввели непустое значение в ответе
+    //             console.log(`Вы работаете в должности ${infoJob}`);
+    //         }
+    //     }else{
+    //         let reason = prompt('Почему Вы не работаете?');
+    //         console.log(`Вы не работаете по причине ${reason}`);
+    //     }
+    // }
+
+    // Пример №2
+
+    // Любое значение КРОМЕ: 0, '', null,undefined это true
+
+    // let a = 10;
+    // if(a > 10){
+    //     a++;
+    // }else{
+    //     a--;
+    //     if(a > 5){
+    //         if(10){
+    //             if("test"){
+    //                 a--;
+    //             }
+    //             a *= 2;
+    //         }
+    //     }
+    //     a++;
+    // }
+
+    // alert(a++);
+
+    // let isLeapYear = new Date().getFullYear();
+    // if(isLeapYear % 4 == 0){//проверка на кратность 4
+    //     alert('Високосный год');
+    // }else{
+    //     alert('Год невисокосный');
+    // }
+ 
+    // 2ой способ проверки
+
+    // let currentYear = new Date().getFullYear();
+    // let isLeapYear = currentYear % 4 == 0;
+    // if(isLeapYear){ //не используем == true !!! Если нужно сравнить с false 
+    //     // используйте перед названием переменной отрицание "!"
+    //     alert('Високосный год');
+    // }else{
+    //     alert('Год невисокосный');
+    // }
+
+
+    let cost = parseInt(Math.random() * (2001 - 300) + 300);
+    document.write(`random cost = ${cost}\n`);
+    if(cost>500 && cost < 1000) {
+        cost -= cost * 0.05;
+    } else if(cost >= 1000) {
+        cost -= cost * 0.1;
+    }
+    document.write(`стомость со сикдкой ${cost}`);
+
+
+
+
+</script>

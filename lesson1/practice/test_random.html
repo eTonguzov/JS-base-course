@@ -1,0 +1,13 @@
+<script>
+    let age1 = parseInt(Math.random() * (50 - 20) + 20),
+        age2 = parseInt(Math.random() * (50 - 20) + 20),
+        age3 = parseInt(Math.random() * (50 - 20) + 20);
+
+        let maxAge = Math.max(age1,age2,age3);
+        let minAge = Math.min(age1,age2,age3);
+
+        let middleAge = age1 + age2 + age3 - maxAge - minAge;
+
+        document.write(`${minAge},${middleAge},${maxAge}`);
+
+</script>

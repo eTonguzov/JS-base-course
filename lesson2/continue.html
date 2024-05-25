@@ -1,0 +1,29 @@
+<script>
+
+    // Оператор continue завершает текущую итерацию цикла и переходит
+    // к условию цикла
+
+    let table = "<table border='1' width='800'>";
+    let i = 1;//счетчик строк
+    while(i <= 100){
+        if(i == 6){
+            break;
+        }
+        table += "<tr>";
+        let j = 1;//счетчик столбцов
+        while(j <= 10){
+            if(j == 5){
+                j++;
+                continue;//после continue мы уже не выполняем 
+                // код ниже в этой итерации
+            }
+            let color = j % 2 == 0 ? "red" : "blue";
+            table += `<td style='text-align:center;color:${color};'>${i * j}</td>`;
+            j++;
+        }
+        table += "</tr>";
+        i++;
+    }
+    table += "</table>";
+    document.write(table);
+</script>

@@ -1,0 +1,41 @@
+<script>
+    // Пример функционального выражения
+    let sum = function(a,b){
+        return a + b;
+    }
+
+    // Если переменной присваивается функция, то наша переменная сама станет функцией
+
+    // alert(sum(1,2));
+
+    let test = function(a,b,c){
+        alert(a(b,c));
+    }
+
+    // test(sum,2,4);
+
+    // Стрелочные функции
+    // Пример 1
+
+    // let getSum = (a,b) => a + b;
+    // alert(getSum(2,4));
+
+    // Пример 2
+    // let getSum = a => a ** 2;
+    // alert(getSum(5));
+
+    // Пример 3
+
+    let showSum = (a,b) => {
+        a = +a;
+        b = +b;
+        if((!isNaN(a)) && (!isNaN(b))){
+            alert(a + b);
+        }else{
+            alert('Вы передали нечисловые значения в функцию');
+        }
+    }
+
+    showSum("7",3);
+
+</script>

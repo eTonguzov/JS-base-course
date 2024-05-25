@@ -1,0 +1,34 @@
+<script>
+    
+    let item1 = {
+        title:'Audi',
+        price:18000
+    }
+    let item2 = {
+        title:'BMW',
+        price:1300
+    }
+    let item3 = {
+        title:'Mercedes',
+        price:1500
+    }
+
+    let items = [item1,item2,item3];
+
+    let s = 0;
+    items.forEach(function(good){//good принимает каждое значение массива
+        s += good.price;
+        console.log(`Автомобиль ${good.title} стоит ${good.price}`);
+    });
+    console.log('Стоимость всех авто: ' + s)
+
+
+    // Создать компанию, состоящую из сотрудников. У каждого сотрудника
+    // есть id, ФИО и оклад. Создать массив сотрудников, выведите
+    // информацию о всех сотрудниках на страницу. Найти среднюю зарплату всех
+    // сотрудников.
+
+
+
+
+</script>

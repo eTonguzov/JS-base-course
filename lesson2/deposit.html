@@ -1,0 +1,14 @@
+<script>
+    let money = +prompt('Введите Вашу сумму');
+    let years = +prompt('Срок вклада');
+    let rate = years > 3 ? 9 : 8;
+
+    let info = "";
+    for(let i = 1;i <= years;i++){//i это счетчик лет
+        let profit = money * rate / 100;//прибыль за текущий год
+        money += profit;//сумма с учетом прибыли
+        info += `Прибыль за ${i} год: ${profit.toFixed(2)}, Ваша сумма = ${money.toFixed(2)}<hr>`;
+    }
+    document.write(info);
+
+</script>

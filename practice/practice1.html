@@ -1,0 +1,11 @@
+<script>
+    let userString = prompt('Для вычисления значения (a+b)/c \n Введите часла а,b,c через запятую');
+    let massive = userString.split(',');
+    let a = parseInt(massive[0]),
+        b = parseInt(massive[1]),
+        c = parseInt(massive[2]);
+    function result (a,b,c){
+        return (a+b)/c
+    }
+alert(`Результат выражения (${a}+${b})\\${c} = ${result(a,b,c)}`)
+</script>

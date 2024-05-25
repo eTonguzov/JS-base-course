@@ -1,0 +1,45 @@
+<script>
+
+
+    function getItemWithMinPrice(items){//items - это массив элементов(объектов)
+        let minItem = { //Пусть этот объект является автомобилем с макс. ценой
+            title:'',
+            price:Number.MAX_VALUE
+        }
+    
+        for(let car of items){
+            if(car.price < minItem.price){
+                minItem.title = car.title;
+                minItem.price = car.price;
+            }
+        }
+    
+        return minItem;
+    }
+    
+    
+    function Car(title,price){
+    this.title = title;//this - это тот объект, для которого запускаем функцию конструктор
+    this.price = price;
+    this.getInfo = function(){
+    return `Автомобиль ${this.title} стоит ${this.price}`;
+    }
+    }
+    
+    let car1 = new Car('Audi',1000);
+    let car2 = new Car('BMW',1200);
+    let car3 = new Car('VW',900);
+    
+    let cars = [car1,car2,car3];
+    for(let car of cars){
+        console.log(car.getInfo());
+    }
+    
+    
+    let carMinPrice = getItemWithMinPrice(cars);
+    console.log(carMinPrice);
+    alert(`Автомобиль ${carMinPrice.title} стоит дешевле остальных, его цена: ${carMinPrice.price}`)
+    
+    </script>
+    
+    

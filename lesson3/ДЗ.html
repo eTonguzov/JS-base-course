@@ -1,0 +1,107 @@
+<script>
+    function Product(id, title, price){
+        this.id = id;
+        this.title = title;
+        this.price = price;
+        this.show = function(){
+            console.log('Продукт ' + this.title + ' стоит ' + this.price);
+        }
+    }
+
+function Basket(id, title, amount){
+        this.id = id;
+        this.title = title;
+        this.amount = amount;
+        this.show = function(){
+            console.log('Продукт в корзине: ' + this.title + ' в количестве ' + this.amount);
+        }
+    }
+
+function showProducts() {
+    console.log('Список продуктов в наличии:');
+    for (let product of products) {
+        product.show();
+    }
+}
+
+function addProduct(){
+    let id = prompt('Введите ID продукта, который хотите добавить');
+    let title = prompt('Введите название продукта, который хотите добавить');
+    let price = +prompt('Введите стоимость продукта, который хотите добавить');
+    
+    let productAdder = new Product(id, title, price);
+    products.push(productAdder);   
+}
+
+function deleteProduct(){
+    let title = prompt('Выберите товар, который хотите удалить');
+    for(let i = 0; i < products.length; i++){
+        if(products[i].title === title){
+            products.splice(i, 1);
+            showProducts();
+            break;
+        }
+    }
+}
+
+function addBasket(quest){
+    let product = products.find(item => item.id === quest);
+    if(product){
+        let cartItem = cart.find(item => item.id === quest);
+        if(cartItem){
+            cartItem.amount++;
+        } else {
+            let basketProduct = new Basket(product.id, product.title, 1);
+            cart.push(basketProduct);
+        }
+        console.log('Товар добавлен в корзину');
+    } else {
+        console.log('Товар с таким ID не найден');
+    }
+}
+
+const product1 = new Product(1, "Колбаса", 250);
+const product2 = new Product(2, "Картошка", 22);
+const product3 = new Product(3, "Молоко", 170);
+const product4 = new Product(4, "Сыр", 300);
+
+let products = [product1, product2, product3, product4];
+let cart = [];
+
+for(let x of products){
+    x.show();
+}
+
+let Online = true;
+while(Online){
+    let menu = prompt ('Выберите пункт меню:\n 1 Добавить продукт\n 2 Удалить продукт\n 3 Вывести продукты в наличии\n 4 Добавить продукт в корзину\n 5 Посмотреть корзину\n Введите номер пункта меню (для выхода наберите "exit")');
+    switch(menu){
+        case '1':
+            addProduct();
+            break;
+        case '2':
+            deleteProduct();
+            break;
+        case '3':
+            showProducts();
+            break;
+        case '4':
+            let quest = parseInt(prompt('Введите ID продукта, который хотите добавить в корзину'));
+            addBasket(quest);
+            break;
+        case '5':
+            console.log('Содержимое корзины:');
+            for (let basketProduct of cart) {
+                basketProduct.show();
+            }
+            break;
+        case 'exit':
+            Online = false;
+            break;
+        default:
+            alert('Неверный номер пункта меню, попробуйте еще раз');
+            break;
+    }
+}
+
+</script>

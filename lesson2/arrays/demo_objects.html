@@ -1,0 +1,20 @@
+<script>
+    // Объект это структура у которой есть свойства и могут быть методы.
+    // Методы - это действия, которые объект может выполнять
+
+    let item = {
+        title:'Audi',
+        price:1000,
+        color:'Белый',
+        showInfo: function(){
+            console.log(`Автомобиль ${this.title} стоит ${this.price}`);
+        }
+    }
+
+    // Можно через оператор точка добавить новое свойство объекту
+    item.year = 2024;
+
+    console.log(item);
+
+    item.showInfo();
+</script>

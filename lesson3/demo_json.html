@@ -1,0 +1,28 @@
+<script>
+    let userJson = '{"name":"Иван","age":25,"isAdmin":true}';
+    // Для преобразования строки JSON в объект JS используйте JSON.parse
+    let user = JSON.parse(userJson);
+    user.address = {
+        city:'Москва',
+        phone:'+7923435235'
+    }
+    user.dateCreated = '2024-05-24';
+    // console.log(user);
+
+    // Преобразование объекта JS в строку JSON (используем JSON.stringify)
+    let userStr = JSON.stringify(user,null,4);
+    // console.log(userStr);
+
+    let newUser = JSON.parse(userStr,(key,value) => {
+        if(key == 'dateCreated'){
+            value = new Date(value);
+        }
+        return value;
+    })
+
+    console.log(newUser);
+
+// Создать массив из двух объектов, которые являются товарами. Конвертировать
+// массив объектов в строку
+
+</script>

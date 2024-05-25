@@ -1,0 +1,36 @@
+<script>
+    function Product(id, title, price){//функция конструктор для товаров
+        this.id = id,
+        this.title = title,
+        this.price = price
+    }
+
+    let tShirt = new Product(1,'t-Shirt Nike', 1500);
+    let shorts = new Product(2, 'Shorts Adidas', 2000);
+    let shoes = new Product(3, 'Asics Speed', 10000);
+    let array = [tShirt,shorts,shoes]
+
+    console.log(array)
+
+    let menu = +prompt('Выберите нужный пункт меню:\n #1: Добавить товар\n #2: Удалить товар \n #3: Вывести все товары\n #4: Завершить работу')
+    if(menu == 1){
+        let id = +prompt('Введите id товара');
+        let title = prompt('Введите описание товара');
+        let price = +prompt('Введите цену товара');
+        let newObJ = new Product(id, title, price)
+        array.push(newObJ);
+        alert(`Товар : ${title} успешно добавлен!`)
+    } else if(menu == 2){
+        let id = +prompt('Введите id товара кторый желаете удалить');
+
+
+    } else if(menu ==3) {
+        array.forEach(element => {
+            
+        });
+        alert(array)
+
+    }
+    console.log(array)
+
+</script>

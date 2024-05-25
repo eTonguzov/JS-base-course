@@ -1,0 +1,41 @@
+<script>
+  function Product(id, title, price) { //функция конструктор для товаров
+    this.id = id,
+    this.title = title,
+    this.price = price,
+    this.getInfo = `Товар ${title} c id = ${id} стоит: ${price} руб`;
+  }
+  let tShirt = new Product(1, "t-Shirt Nike", 1500); //футболка
+  let shorts = new Product(2, "Shorts Adidas", 2000); //шорты
+  let shoes = new Product(3, "Asics MetaSpeed", 20000);//кроссовки
+  let array = [tShirt, shorts, shoes];
+
+  let stop = false;
+  while (stop == false) { //пока не стоп, накходимся в программе
+    let menu = +prompt("Выберите нужный пункт меню:\n #1: Добавить товар\n #2: Удалить товар \n #3: Вывести все товары\n #4: Завершить работу");
+
+    if (menu == 1) {
+      let id = +prompt("Введите id товара");
+      let title = prompt("Введите описание товара");
+      let price = +prompt("Введите цену товара");
+      let newObJ = new Product(id, title, price);
+      array.push(newObJ);
+      alert(`Товар : ${title} успешно добавлен!`);
+    } else if (menu == 2) {
+      let id = +prompt("Введите id товара кторый желаете удалить");
+      array.splice(id, 1);
+      alert(`Товар c id = ${id} успешно удален!`);
+    } else if (menu == 3) {
+      infoArray = ""; //пустая строка
+      for (let i = 0; i < array.length; i++) { 
+        infoArray += array[i].getInfo + "\n";//иду по массиву собираю getInfo искладываю в строку
+      }
+      alert(infoArray);
+    } else if (menu == 4) {
+      alert("Работа завершена!");
+      break;
+    } else {
+      alert("Такого пункта меню нет!");
+    }
+  }
+</script>

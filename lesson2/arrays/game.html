@@ -1,0 +1,43 @@
+<script>
+    let questions = [
+        {
+            text_question: '2 * 3 = ?',
+            answers: [6,4,2,8],
+            correct:1,
+            price:100
+        },
+        {
+            text_question: '3 * 3 = ?',
+            answers: [6,4,9,8],
+            correct:3,
+            price:200
+        },
+        {
+            text_question: '2 * 8 = ?',
+            answers: [6,4,2,16],
+            correct:4,
+            price:300
+        },
+    ];
+    let moneyUser = 0;
+    let i = 1;//переменная для хранения номера вопроса
+    for(let item of questions){ //item - это объект с каждым вопросом
+        let info = `Вопрос №${i}:\n${item.text_question}\n`;
+        for(let j = 0;j < item.answers.length;j++){
+            info += `${j + 1}) ${item.answers[j]}\n`;
+        }
+        let answer = +prompt(info);
+        if(answer == item.correct){
+            moneyUser += item.price;
+        }else{
+            alert('Вы ошиблись, верный ответ: ' + item.correct);
+            moneyUser = 0;
+            break;
+        }
+        i++;
+    }
+
+    alert(moneyUser > 0 ? `Поздравляем, Ваша сумма = ${moneyUser}` : 'Сумма выигрыша = 0')
+
+
+</script>

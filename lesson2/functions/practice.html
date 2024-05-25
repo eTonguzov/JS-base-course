@@ -1,0 +1,54 @@
+<script>
+    while(1){
+        let a = +prompt('a='),
+        b = +prompt('b=');
+        if(!isThisNan(a,b)){
+           let sign = prompt('Введите знак операции');
+           alert(calc(a,b,sign));
+           break;
+        }
+    }
+    
+    function sum(a,b){
+        return a + b;
+    }
+    
+    function razn(a,b){
+        return a - b;
+    }
+    
+    function proizv(a,b){
+        return a * b;
+    }
+    
+    function delen(a,b){
+        if(b == 0){
+            alert('На 0 делить нельзя');
+            return -1;
+        } 
+        return a / b;
+    }
+    
+    function calc(a,b,sign){
+        switch (sign){
+            case "+":
+                return sum(a,b);
+            case "-":
+                return razn(a,b);
+            case "*":
+                return proizv(a,b);
+            case "/":
+                return delen(a,b)
+        }
+    }
+    
+    function isThisNan(a,b){
+        if(isNaN(a) || isNaN(b)) {
+            alert('Введите корректное число');
+            return true;
+        }
+        return false;
+    }
+    
+    
+    </script>

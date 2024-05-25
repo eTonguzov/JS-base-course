@@ -1,0 +1,30 @@
+<script>
+    class Car{
+        constructor(title,price){
+            this.title = title;
+            this.price = price;
+        }
+        getInfo(){
+            return `Автомобиль ${this.title} стоит ${this.price}`;
+        }
+    }
+
+    class RaceCar extends Car{
+        constructor(title,price,speed){
+            super(title,price);
+            this.speed = speed;
+        }
+        getInfo(){
+            return `${super.getInfo()}\nАвтомобиль разгоняется до скорости ${this.speed}`
+        }
+    }
+
+    let raceCar = new RaceCar("Ауди",1000,300);
+    console.log(raceCar.getInfo());
+
+    // let car1 = new Car("Ауди",1000);
+    // let car2 = new Car("БМВ",1200);
+
+    // let cars = [car1,car2];
+    // cars.forEach(item => console.log(item.getInfo()))
+</script>

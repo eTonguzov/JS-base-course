@@ -1,0 +1,35 @@
+<script>
+    // function outer(){
+    //     let a = 2;
+    //     function inner(){
+    //         let b = 1;
+    //         alert(a + b);
+    //     }
+    //     inner();
+    // }
+
+    // outer();
+
+    // Пример на понимание, где использовать вложенные функции
+
+    function PC(on){
+        let title = 'Acer';
+        Proc(on)
+        RAM(on)
+        Hard(on)
+
+        function RAM(action){
+            console.log(action ? 'Модуль RAM запущен!' : 'Модуль RAM выключен!');
+        }
+        function Proc(action){
+            console.log(action ? 'Модуль Proc запущен!' : 'Модуль Proc выключен!');
+        }
+        function Hard(action){
+            console.log(action ? 'Модуль Hard запущен!' : 'Модуль Hard выключен!');
+        }
+    }
+
+    PC(false);
+
+
+</script>

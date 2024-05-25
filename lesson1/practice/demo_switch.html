@@ -1,0 +1,51 @@
+<script>
+    // let color = prompt('Какой цвет сейчас у светофора? (red,green,yellow)');
+    // switch(color){
+    //     case "red":
+    //         console.log('Стоп');
+    //         // break;
+    //     case "green":
+    //         console.log('Вперед');
+    //         // break;
+    //     case "yellow":
+    //         console.log('Внимание');
+    //         // break;
+    //     default:
+    //         console.log('Поломка светофора');
+    // }
+
+
+    // Практика:
+
+    // Создать переменную number со случайным значением от 1 до 5.
+    // Если number 1, то вывести числа 12345, а если 2 - 2345 и т.д.
+    // Использовать switch
+
+// let fio = 'Иван';
+// fio += ' Иванович';
+// fio += ' Иванов';
+// alert(fio);
+
+
+let number= parseInt(Math.random()*(6-1)+1);
+
+let str = "";
+switch (number){
+    case 1:
+        str += '1';
+        // console.log(1)
+    case 2:
+        str += '2';
+        // console.log(2)
+    case 3:
+        str += '3';
+        // console.log(3)
+    case 4:
+        str += '4';
+        // console.log(4)
+    case 5:
+        str += '5';
+    // console.log(5);
+}
+console.log(`Исходное число: ${number}, результат: ${str}`);
+</script>

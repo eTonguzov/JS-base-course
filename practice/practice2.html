@@ -1,0 +1,16 @@
+<script>
+    let userString = prompt('Введите часла а,b через запятую \n Если a+b>0 верну true, в противном случае верну false');
+    let massive = userString.split(','); //разделяю
+    let a = parseInt(massive[0]), // записываю в переменную, привожу к числу
+        b = parseInt(massive[1]);
+function result(a,b){
+    if(a+b>0){
+        return true
+    } else{
+        return false  
+    }
+}
+console.log(result(-5,-5))
+alert(`Результат: ${result(a,b)}`)
+
+</script>

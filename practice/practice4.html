@@ -1,0 +1,23 @@
+<script>
+
+    function Person(name, slalry){//конструктор
+        this.name = name,
+        this.slalry = slalry;
+    }
+    let junior = new Person('Ivan', 200),
+        middle_dev = new Person('Egor', 500),
+        senior = new Person('Mike', 2000)
+        manager = new Person('Tom', 10000);
+    let nameSearch = prompt('Введите имя сотрудника')//которого хотим найти
+
+        let massive = [junior, middle_dev,senior,manager];
+
+        function searchPerson(personName){
+            let search= massive.find(element => element.name ==personName);//в массиве проходим по объектам, и сравниваем значение name с входным значением 
+            if(search){//true
+                return search.slalry;
+            }else return "Такого сотрудника нет"
+        }
+//console.log(searchPerson('Tom'))
+alert(`Зарплата сотрудника ${nameSearch} равна ${searchPerson(nameSearch)}`)
+</script>
